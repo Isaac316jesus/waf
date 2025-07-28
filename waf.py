@@ -36,7 +36,7 @@ try:
         new = st.text_input("for how long will he or she take this medication in days?: ").strip()
         new = float(new)
         true = (final / 5) * day* new
-        st.success(f"The patient will take {m.ceil(true)} tablets. Take {final/5} tablet daily for {new} days")
+        st.success(f"The patient will take {m.ceil(true)} tablets. Take {final/5} tablet/s {day} times a day for {new} days")
 
 
     elif q1 == "Dose taken on alternative periods":
@@ -53,7 +53,7 @@ try:
         week = st.text_input("For how many weeks will the patient take the medication?: ")
         week = float(week)
         true = (final / 5) * day* new * week
-        st.success(f"The patient will take {m.ceil(true)} tablets. Take {final/5} tablet on alternative days as specified")
+        st.success(f"The patient will take {m.ceil(true)} tablets. Take {final/5} tablet/s {day} times a day on alternative days as specified")
 
 
     elif q1 == "2 doses taken a day":
@@ -74,14 +74,14 @@ try:
             true = (final / 5) * day* week
             true2 = (final2 / 5) * day * week
             total = true + true2
-            st.success(f"The patient will take {m.ceil(total)} tablets. Take {final/5} tablet of {final}mg daily in the morning then take {final2/5} tablet of {final2}mg at night")
+            st.success(f"The patient will take {m.ceil(total)} tablets. Take {final/5} tablet/s of {final}mg, {day} times in the morning then take {final2/5} tablet/s of {final2}mg {day} times at night")
         elif question == "days" or question == "day":
             week = st.text_input("For how many days will the patient take the medication?: ")
             week = float(week)
             true = (final / 5) * day* week
             true2 = (final2 / 5) * day * week
             total = true + true2
-            st.success(f"The patient will take {m.ceil(total)} tablets. Take {final/5} Tablet of {final}mg daily in the morning then take {final2/5} tablet of {final2}mg at night")
+            st.success(f"The patient will take {m.ceil(total)} tablets. Take {final/5} Tablet of {final}mg, {day} times in the morning then take {final2/5} tablet of {final2}mg {day} times at night")
         else:
             st.error("Must only be week/s or day/s!!")
 
